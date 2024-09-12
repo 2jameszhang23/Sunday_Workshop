@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U51_BK2_CS Course Materials</title>
     <style>
+        /* 基础样式，深色背景和亮色文本 */
+        body {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #00ffcc;
+            border-bottom: 2px solid #00ffcc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
         /* 隐藏所有的文件列表，默认不显示 */
         .files {
             display: none;
@@ -14,9 +34,59 @@
         /* 设置为可点击的样式 */
         .session {
             cursor: pointer;
-            color: blue;
+            color: #00ffcc;
             text-decoration: underline;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 10px;
         }
+
+        .session:hover {
+            color: #ff66cc;
+            text-shadow: 0px 0px 5px #ff66cc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff66cc;
+            text-shadow: 0px 0px 5px #ff66cc;
+        }
+
+        /* 给文件列表增加边框 */
+        .files {
+            border-left: 3px solid #00ffcc;
+            padding-left: 20px;
+        }
+
+        /* 增加一个高科技的闪烁效果 */
+        .glow {
+            animation: glow 1s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
+            }
+            to {
+                text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+            }
+        }
+
     </style>
     <script type="text/javascript">
         // 简单的密码保护
@@ -38,18 +108,19 @@
     </script>
 </head>
 <body>
-    <h1>AI and Data Science Workshop</h1>
+    <h1 class="glow">AI and Data Science Workshop</h1>
     <p>Click on each session to view the files:</p>
 
     <!-- Session 1 -->
     <div>
-    <p class="session" onclick="toggleFiles('session1Files')">Workshop 1: Intro</p>
-    <div class="files" id="session1Files">
-        <ul>
-            <li><a href="ppt/Workshop_1_intro.pdf" target="_blank">Slides</a></li>
-            <li><a href="https://www.bilibili.com/video/BV1EJ411V7xN/?spm_id_from=333.337.search-card.all.click&vd_source=35a128621506bf0c5b172216272492bc" target="_blank">What's Data Science</a></li>
-            <li><a href="https://suno.com/" target="_blank">Create your own song!</a></li>
-        </ul>
+        <p class="session" onclick="toggleFiles('session1Files')">Workshop 1: Intro</p>
+        <div class="files" id="session1Files">
+            <ul>
+                <li><a href="ppt/Workshop_1_intro.pdf" target="_blank">Slides</a></li>
+                <li><a href="https://www.bilibili.com/video/BV1EJ411V7xN/?spm_id_from=333.337.search-card.all.click&vd_source=35a128621506bf0c5b172216272492bc" target="_blank">What's Data Science</a></li>
+                <li><a href="https://suno.com/" target="_blank">Create your own song!</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Session 2 -->
@@ -61,7 +132,6 @@
             </ul>
         </div>
     </div>
-
 
     <!-- Add more sessions as needed -->
 </body>
