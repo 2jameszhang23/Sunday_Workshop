@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U51_BK2_CS Course Materials</title>
+    <style>
+        /* 隐藏所有的文件列表，默认不显示 */
+        .files {
+            display: none;
+            margin-left: 20px;
+        }
+
+        /* 设置为可点击的样式 */
+        .session {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript">
+        // 简单的密码保护
+        var password = prompt("Please enter the password:");
+        if (password !== "142857") {
+            alert("Incorrect password");
+            window.location.href = "about:blank";
+        }
+
+        // 切换文件列表的显示状态
+        function toggleFiles(sessionId) {
+            var files = document.getElementById(sessionId);
+            if (files.style.display === "none") {
+                files.style.display = "block"; // 展开文件列表
+            } else {
+                files.style.display = "none"; // 收起文件列表
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>U51_BK2_CS Course Materials</h1>
+    <p>Click on each session to view the files:</p>
+
+    <!-- Session 1 -->
+    <div>
+        <p class="session" onclick="toggleFiles('session1Files')">Session 1: Data Storage</p>
+        <div class="files" id="session1Files">
+            <ul>
+                <li><a href="ppt/data_storage.pdf" target="_blank">Data Storage PDF</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Session 2 -->
+    <div>
+        <p class="session" onclick="toggleFiles('session2Files')">Session 2: Hexadecimal</p>
+        <div class="files" id="session2Files">
+            <ul>
+                <li><a href="ppt/hexa.pdf" target="_blank">Hexadecimal PDF</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- IGCSE Syllabus -->
+    <div>
+        <p class="session" onclick="toggleFiles('syllabusFiles')">IGCSE Syllabus</p>
+        <div class="files" id="syllabusFiles">
+            <ul>
+                <li><a href="ppt/syllabus.pdf" target="_blank">IGCSE Syllabus PDF</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Add more sessions as needed -->
+</body>
+</html>
