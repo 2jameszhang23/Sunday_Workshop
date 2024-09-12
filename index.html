@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U51_BK2_CS Course Materials</title>
     <style>
-        /* 基础样式，深色背景和亮色文本 */
+        /* 黑色背景，绿色文字，等宽字体，模拟终端界面 */
         body {
-            background-color: #1e1e1e;
-            color: #f5f5f5;
+            background-color: #000000;
+            color: #00FF00;
             font-family: 'Courier New', Courier, monospace;
             padding: 20px;
             line-height: 1.6;
         }
 
         h1 {
-            color: #00ffcc;
-            border-bottom: 2px solid #00ffcc;
+            color: #00FF00;
+            border-bottom: 1px solid #00FF00;
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         /* 隐藏所有的文件列表，默认不显示 */
@@ -34,17 +34,16 @@
         /* 设置为可点击的样式 */
         .session {
             cursor: pointer;
-            color: #00ffcc;
-            text-decoration: underline;
-            font-size: 1.2rem;
+            color: #00FF00;
+            text-decoration: none;
+            font-size: 1.1rem;
             margin-bottom: 10px;
             display: inline-block;
-            padding: 10px;
         }
 
         .session:hover {
-            color: #ff66cc;
-            text-shadow: 0px 0px 5px #ff66cc;
+            color: #00FF00;
+            background-color: #333333;
         }
 
         ul {
@@ -57,36 +56,34 @@
         }
 
         a {
-            color: #ffcc00;
+            color: #00FF00;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #ff66cc;
-            text-shadow: 0px 0px 5px #ff66cc;
+            color: #FFFFFF;
         }
 
-        /* 给文件列表增加边框 */
+        /* 给文件列表增加虚线边框 */
         .files {
-            border-left: 3px solid #00ffcc;
+            border-left: 2px dotted #00FF00;
             padding-left: 20px;
         }
 
-        /* 增加一个高科技的闪烁效果 */
-        .glow {
-            animation: glow 1s infinite alternate;
+        /* 模拟命令行的闪烁光标 */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00FF00;
+            animation: blink 1s step-start 0s infinite;
         }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
-            }
-            to {
-                text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+        @keyframes blink {
+            50% {
+                opacity: 0;
             }
         }
-
     </style>
     <script type="text/javascript">
         // 简单的密码保护
@@ -108,12 +105,12 @@
     </script>
 </head>
 <body>
-    <h1 class="glow">AI and Data Science Workshop</h1>
+    <h1>AI and Data Science Workshop</h1>
     <p>Click on each session to view the files:</p>
 
     <!-- Session 1 -->
     <div>
-        <p class="session" onclick="toggleFiles('session1Files')">Workshop 1: Intro</p>
+        <p class="session" onclick="toggleFiles('session1Files')">> Workshop 1: Intro</p>
         <div class="files" id="session1Files">
             <ul>
                 <li><a href="ppt/Workshop_1_intro.pdf" target="_blank">Slides</a></li>
@@ -125,14 +122,18 @@
 
     <!-- Session 2 -->
     <div>
-        <p class="session" onclick="toggleFiles('session2Files')">Workshop 2: Python</p>
+        <p class="session" onclick="toggleFiles('session2Files')">> Workshop 2: Python</p>
         <div class="files" id="session2Files">
             <ul>
-                <li><a href="ppt/Workshop2: Python.pdf.pdf" target="_blank">TBD</a></li>
+                <li><a href="ppt/Workshop2_Python.pdf" target="_blank">TBD</a></li>
             </ul>
         </div>
     </div>
 
     <!-- Add more sessions as needed -->
+
+    <!-- 闪烁的命令行光标 -->
+    <p class="cursor"></p>
 </body>
 </html>
+
