@@ -21,7 +21,7 @@
     <script type="text/javascript">
         // 简单的密码保护
         var password = prompt("Please enter the password:");
-        if (password !== "142857") {
+        if (password !== "404404") {
             alert("Incorrect password");
             window.location.href = "about:blank";
         }
@@ -38,38 +38,29 @@
     </script>
 </head>
 <body>
-    <h1>U51_BK2_CS Course Materials</h1>
+    <h1>AI and Data Science Workshop</h1>
     <p>Click on each session to view the files:</p>
 
     <!-- Session 1 -->
     <div>
-        <p class="session" onclick="toggleFiles('session1Files')">Session 1: Data Storage</p>
-        <div class="files" id="session1Files">
-            <ul>
-                <li><a href="ppt/data_storage.pdf" target="_blank">Data Storage PDF</a></li>
-            </ul>
-        </div>
+    <p class="session" onclick="toggleFiles('session1Files')">Workshop 1: Intro</p>
+    <div class="files" id="session1Files">
+        <ul>
+            <li><a href="ppt/Workshop1: Intro.pdf" target="_blank">Slides</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1EJ411V7xN/?spm_id_from=333.337.search-card.all.click&vd_source=35a128621506bf0c5b172216272492bc" target="_blank">External Resource</a></li>
+        </ul>
     </div>
 
     <!-- Session 2 -->
     <div>
-        <p class="session" onclick="toggleFiles('session2Files')">Session 2: Hexadecimal</p>
+        <p class="session" onclick="toggleFiles('session2Files')">Workshop 2: Python</p>
         <div class="files" id="session2Files">
             <ul>
-                <li><a href="ppt/hexa.pdf" target="_blank">Hexadecimal PDF</a></li>
+                <li><a href="ppt/Workshop2: Python.pdf.pdf" target="_blank">TBD</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- IGCSE Syllabus -->
-    <div>
-        <p class="session" onclick="toggleFiles('syllabusFiles')">IGCSE Syllabus</p>
-        <div class="files" id="syllabusFiles">
-            <ul>
-                <li><a href="ppt/syllabus.pdf" target="_blank">IGCSE Syllabus PDF</a></li>
-            </ul>
-        </div>
-    </div>
 
     <!-- Add more sessions as needed -->
 </body>
