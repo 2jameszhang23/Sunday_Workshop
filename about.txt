@@ -1,0 +1,8 @@
+Q：Workshop针对谁，作用是什么
+A：主要针对对计算机/AI/Data领域感兴趣，希望在大学里深造的学生。介绍AI和数据科学的入门知识，包括Python/SQL/Data Visualization等。
+Q：上了会让我在IG/A-LEVEL考试考高分吗
+A：有提升作用，但是肯定没有背课本来得大，所以请兴趣驱动而非分数驱动。
+Q：需要准备什么
+A：脑子，电脑，Anaconda软件（preferred），魔法（preferred）。
+Q：其他问题
+A：请先参考Intro章节ppt，其他问题请发邮件jamie.zhang@malverncollege.cn
