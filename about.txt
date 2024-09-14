@@ -7,5 +7,11 @@ A：有提升作用，但是肯定没有背课本来得大，所以请兴趣驱�
 Q：需要准备什么
 A：脑子，电脑，Anaconda软件（preferred），魔法（preferred）。
 
+Q：大概会是什么样的学习方式
+A：不用背，靠理解，*善用搜索引擎*（这在以后的计算机学习中很很很重要）。
+
+Q：难吗
+A：不难
+
 Q：其他问题
-A：请先参考Intro章节ppt，其他问题请发邮件jamie.zhang@malverncollege.cn
+A：请先自己上网搜索，之后参考Intro章节ppt，最后还有其他问题请发邮件jamie.zhang@malverncollege.cn
