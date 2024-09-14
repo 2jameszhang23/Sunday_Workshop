@@ -5,45 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U51_BK2_CS Course Materials</title>
     <style>
-        /* 黑色背景，绿色文字，等宽字体，模拟终端界面 */
         body {
-            background-color: #000000;
-            color: #00FF00;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 使用flex布局 */
+        .container {
+            display: flex;
+            justify-content: space-between;
             padding: 20px;
-            line-height: 1.6;
+        }
+
+        /* 左侧课程内容区域样式 */
+        .content {
+            width: 55%;
+            padding: 10px;
+        }
+
+        /* 右侧关于课程区域样式 */
+        .about {
+            width: 25%;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
         }
 
         h1 {
-            color: #00FF00;
-            border-bottom: 1px solid #00FF00;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.1rem;
-        }
-
-        /* 隐藏所有的文件列表，默认不显示 */
-        .files {
-            display: none;
-            margin-left: 20px;
-        }
-
-        /* 设置为可点击的样式 */
-        .session {
-            cursor: pointer;
-            color: #00FF00;
-            text-decoration: none;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        .session:hover {
-            color: #00FF00;
-            background-color: #333333;
+            font-size: 24px;
         }
 
         ul {
@@ -56,84 +47,50 @@
         }
 
         a {
-            color: #00FF00;
             text-decoration: none;
-            transition: color 0.3s ease;
+            color: #007BFF;
         }
 
         a:hover {
-            color: #FFFFFF;
+            text-decoration: underline;
         }
 
-        /* 给文件列表增加虚线边框 */
-        .files {
-            border-left: 2px dotted #00FF00;
-            padding-left: 20px;
-        }
-
-        /* 模拟命令行的闪烁光标 */
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            background-color: #00FF00;
-            animation: blink 1s step-start 0s infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
     </style>
     <script type="text/javascript">
-        // 简单的密码保护
-        var password = prompt("Please enter the password:");
-        if (password !== "404404") {
-            alert("Incorrect password");
-            window.location.href = "about:blank";
+        // 动态加载about.txt文件内容
+        function loadAbout() {
+            fetch('about.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('aboutContent').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('aboutContent').textContent = 'Failed to load about the course.';
+                });
         }
 
-        // 切换文件列表的显示状态
-        function toggleFiles(sessionId) {
-            var files = document.getElementById(sessionId);
-            if (files.style.display === "none") {
-                files.style.display = "block"; // 展开文件列表
-            } else {
-                files.style.display = "none"; // 收起文件列表
-            }
-        }
+        window.onload = loadAbout; // 在页面加载时调用
     </script>
 </head>
 <body>
-    <h1>AI and Data Science Workshop</h1>
-    <p>Click on each session to view the files:</p>
-
-    <!-- Session 1 -->
-    <div>
-        <p class="session" onclick="toggleFiles('session1Files')">> Workshop 1: Intro</p>
-        <div class="files" id="session1Files">
+    <div class="container">
+        <!-- 中间主内容区域 -->
+        <div class="content">
+            <h1>U51_BK2_CS Course Materials</h1>
+            <p>Below are the links to download the course PPTs for each session:</p>
             <ul>
-                <li><a href="ppt/Workshop_1_intro.pdf" target="_blank">Slides</a></li>
-                <li><a href="https://www.bilibili.com/video/BV1EJ411V7xN/?spm_id_from=333.337.search-card.all.click&vd_source=35a128621506bf0c5b172216272492bc" target="_blank">What's Data Science</a></li>
-                <li><a href="https://suno.com/" target="_blank">Create your own song!</a></li>
+                <li><a href="ppt/data_storage.pdf" target="_blank">Session 1: Data Storage</a></li>
+                <li><a href="ppt/hexa.pdf" target="_blank">Session 2: Hexadecimal</a></li>
+                <li><a href="ppt/syllabus.pdf" target="_blank">IGCSE Syllabus</a></li>
+                <!-- Add more sessions as needed -->
             </ul>
         </div>
-    </div>
 
-    <!-- Session 2 -->
-    <div>
-        <p class="session" onclick="toggleFiles('session2Files')">> Workshop 2: Python</p>
-        <div class="files" id="session2Files">
-            <ul>
-                <li><a href="ppt/Workshop2_Python.pdf" target="_blank">TBD</a></li>
-            </ul>
+        <!-- 右侧关于课程区域 -->
+        <div class="about">
+            <h2>About the Course</h2>
+            <p id="aboutContent">Loading...</p> <!-- 这里动态加载 about.txt 的内容 -->
         </div>
     </div>
-
-    <!-- Add more sessions as needed -->
-
-    <!-- 闪烁的命令行光标 -->
-    <p class="cursor"></p>
 </body>
 </html>
-
